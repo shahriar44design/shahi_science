@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHAHI SCIENCE</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #e9f5ec;
+      color: #333;
+    }
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #388e3c;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 20px;
+    }
+    footer {
+      background-color: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    button {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #388e3c;
+    }
+    .news-item {
+      background: #fff;
+      padding: 15px;
+      margin: 10px 0;
+      border-left: 5px solid #4caf50;
+    }
+    .news-item img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 10px;
+    }
+    .news-date {
+      color: #555;
+      font-size: 0.9em;
+      margin-bottom: 8px;
+    }
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+      footer {
+        position: relative;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SHAHI SCIENCE</h1>
+    <p>Explore the World of Science and Discovery</p>
+  </header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="home">
+    <h2>Latest Science News</h2>
+    <div class="news-item">
+      <div class="news-date">May 5, 2025</div>
+      <h3>Nobel Prize in Physics 2024</h3>
+      <p>The 2024 Nobel Prize in Physics was awarded for revolutionary work in quantum computing. The recipients developed quantum error correction techniques that dramatically increase the stability of quantum bits (qubits), a major leap toward building scalable quantum computers. This advancement opens the door to solving complex problems previously thought impossible.</p>
+      <img src="E:\1- SHAHI SCIENCE\Nobel-prize-768x770.jpeg" alt="Nobel Prize">
+<p><i><font color="grey">Image from SNOLAB</font></i></p>
+    </div>
+    <div class="news-item">
+      <div class="news-date">April 30, 2025</div>
+      <h3>New Species Discovered</h3>
+      <p>Marine biologists have discovered a previously unknown deep-sea organism in the Pacific Ocean. Named <em>Abyssomyxa pacifica</em>, this gelatinous creature thrives in extreme pressures and may offer new insights into the evolution of life in isolated environments. Its genetic makeup could aid biotechnological innovations.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Jelly_cc11.jpg/800px-Jelly_cc11.jpg" alt="New Marine Species">
+    </div>
+    <div class="news-item">
+      <div class="news-date">May 10, 2025</div>
+      <h3>AI Diagnoses Rare Diseases</h3>
+      <p>Scientists at a global health conference presented an AI system that can diagnose over 200 rare diseases by analyzing genomic and clinical data. This tool has shown 94% accuracy in identifying conditions within hours, which traditionally took months or even years. It represents a turning point in personalized medicine.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Artificial_Intelligence_logo.svg/800px-Artificial_Intelligence_logo.svg.png" alt="AI Diagnostics">
+    </div>
+    <div class="news-item">
+      <div class="news-date">May 15, 2025</div>
+      <h3>Water Detected on Exoplanet</h3>
+      <p>Astronomers using the James Webb Space Telescope detected water vapor in the atmosphere of exoplanet K2-18b. This discovery raises intriguing possibilities about the planet's ability to support life, especially as temperatures fall within a range conducive to liquid water. Researchers aim to study its atmosphere further for signs of biological activity.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/JWST_Artist_Concept.jpg/800px-JWST_Artist_Concept.jpg" alt="Exoplanet with Water">
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About SHAHI SCIENCE</h2>
+    <p>SHAHI SCIENCE is a platform dedicated to spreading knowledge and curiosity in the field of science. Whether you're a student, teacher, or enthusiast, we have something for you.</p>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>Science News and Articles</li>
+      <li>Monthly Newsletters</li>
+      <li>Online Webinars and Events</li>
+      <li>Interactive Reviews and Feedback</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form onsubmit="event.preventDefault(); alert('Message sent!');">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+    <h3>Leave a Review</h3>
+    <form onsubmit="event.preventDefault(); alert('Review submitted!');">
+      <label for="review">Your Review:</label>
+      <textarea id="review" name="review" rows="3" required></textarea>
+
+      <button type="submit">Submit Review</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SHAHI SCIENCE. All rights reserved.</p>
+  </footer>
+</body>
+</html>
