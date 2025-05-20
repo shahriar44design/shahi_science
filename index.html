@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHAHI SCIENCE</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-color: #e9f5ec;
+      --text-color: #333;
+      --header-bg: #2e7d32;
+      --nav-bg: #388e3c;
+      --news-bg: #fff;
+      --border-accent: #4caf50;
+    }
+    [data-theme="dark"] {
+      --bg-color: #121212;
+      --text-color: #eee;
+      --header-bg: #1b5e20;
+      --nav-bg: #2e7d32;
+      --news-bg: #1e1e1e;
+      --border-accent: #66bb6a;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header {
+      background-color: var(--header-bg);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: white;
+      color: black;
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      animation: glow 2s ease-in-out infinite alternate;
+      background: linear-gradient(to right, #a8e063, #56ab2f);
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.3);
+    }
+    .icon-wrapper {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .icon {
+      font-size: 2rem;
+      animation: bounce 2s infinite;
+      color: #4caf50;
+    }
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #66bb6a, 0 0 20px #66bb6a;
+      }
+      to {
+        text-shadow: 0 0 20px #81c784, 0 0 30px #81c784;
+      }
+    }
+    nav {
+      background-color: var(--nav-bg);
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 20px;
+    }
+    h2, h3 {
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(to right, #b2ff59 20%, #76ff03 40%, #64dd17 60%);
+      background-size: 1000px 100%;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: shimmer 3s linear infinite;
+      text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.2);
+    }
+    @keyframes shimmer {
+      0% { background-position: -1000px 0; }
+      100% { background-position: 1000px 0; }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    footer {
+      background-color: var(--header-bg);
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      background-color: var(--news-bg);
+      color: var(--text-color);
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #388e3c;
+    }
+    .news-item {
+      background: var(--news-bg);
+      padding: 15px;
+      margin: 10px 0;
+      border-left: 5px solid var(--border-accent);
+    }
+    .news-item img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 10px;
+    }
+    .news-date {
+      color: #888;
+      font-size: 0.9em;
+      margin-bottom: 8px;
+    }
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body data-theme="light">
+  <header>
+    <h1><span class="icon-wrapper"><i class="fas fa-atom icon"></i></span>SHAHI SCIENCE</h1>
+    <p>Explore the World of Science and Discovery</p>
+    <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
+  </header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="home">
+    <h2><span class="icon-wrapper"><i class="fas fa-newspaper icon"></i></span>Latest Science News</h2>
+    <div class="news-item">
+      <div class="news-date">October 3, 2024</div>
+      <h3><span class="icon-wrapper"><i class="fas fa-award icon"></i></span>2024 Nobel Prize in Physics Awarded for Neutrino Research</h3>
+      <p>The Nobel Prize in Physics 2024 was awarded jointly to Pierre Auger and colleagues for their groundbreaking research into neutrinos — elusive particles that could unlock mysteries of the universe's structure. The awarded experiment, conducted at SNOLAB, used deep-underground detectors to gather critical data on particle behavior, furthering our understanding of astrophysics and particle physics.</p>
+      <img src="https://www.snolab.ca/wp-content/uploads/2024/10/Nobel-prize-768x770.jpeg" width="400px" height="400px" alt="Nobel Prize Neutrino Research">
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">September 18, 2024</div>
+      <h3><span class="icon-wrapper"><i class="fas fa-dna icon"></i></span>AI-Generated Protein Structures Advance Drug Discovery</h3>
+      <p>Scientists using DeepMind’s AlphaFold have successfully predicted structures of thousands of previously uncharacterized proteins. This advancement is expected to speed up drug discovery and deepen our understanding of various diseases by allowing researchers to model molecular interactions more efficiently.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/AlphaFold_Logo.svg/512px-AlphaFold_Logo.svg.png" alt="AlphaFold Protein Discovery">
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">August 10, 2024</div>
+      <h3><span class="icon-wrapper"><i class="fas fa-telescope icon"></i></span>James Webb Telescope Captures Image of Earliest Galaxy</h3>
+      <p>The James Webb Space Telescope has captured an image of a galaxy formed just 300 million years after the Big Bang. This discovery offers new insights into galaxy formation and the conditions of the early universe. The galaxy, dubbed JADES-GS-z13-0, is the most distant ever observed.</p>
+      <img src="https://www.nasa.gov/sites/default/files/thumbnails/image/stsci-01g7p45z0r9ffn5f2wnz7j4xb4.png" alt="James Webb Early Galaxy">
+    </div>
+  </section>
+
+  <section id="about">
+    <h2><span class="icon-wrapper"><i class="fas fa-info-circle icon"></i></span>About Us</h2>
+    <p>SHAHI SCIENCE is a platform dedicated to spreading knowledge and curiosity in the field of science. Whether you're a student, teacher, or enthusiast, we have something for you.</p>
+  </section>
+
+  <section id="services">
+    <h2><span class="icon-wrapper"><i class="fas fa-tools icon"></i></span>Our Services</h2>
+    <ul>
+      <li>Science News and Articles</li>
+      <li>Monthly Newsletters</li>
+      <li>Online Webinars and Events</li>
+      <li>Interactive Reviews and Feedback</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2><span class="icon-wrapper"><i class="fas fa-envelope icon"></i></span>Contact Us</h2>
+    <form onsubmit="event.preventDefault(); alert('Message sent!');">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+    <h3><span class="icon-wrapper"><i class="fas fa-star icon"></i></span>Leave a Review</h3>
+    <form onsubmit="event.preventDefault(); alert('Review submitted!');">
+      <label for="review">Your Review:</label>
+      <textarea id="review" name="review" rows="3" required></textarea>
+
+      <button type="submit">Submit Review</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SHAHI SCIENCE. All rights reserved.</p>
+    <p>Created by Shahriar</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      const themeBtn = document.getElementById('themeBtn');
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      body.setAttribute('data-theme', newTheme);
+      themeBtn.textContent = newTheme === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+  </script>
+</body>
+</html>
