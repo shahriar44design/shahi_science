@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>More Science News - SHAHI SCIENCE</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-color: #e9f5ec;
+      --text-color: #333;
+      --header-bg: #2e7d32;
+      --nav-bg: #388e3c;
+      --news-bg: #fff;
+      --border-accent: #4caf50;
+    }
+    [data-theme="dark"] {
+      --bg-color: #121212;
+      --text-color: #eee;
+      --header-bg: #1b5e20;
+      --nav-bg: #2e7d32;
+      --news-bg: #1e1e1e;
+      --border-accent: #66bb6a;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header {
+      background-color: var(--header-bg);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: white;
+      color: black;
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      background: linear-gradient(to right, #a8e063, #56ab2f);
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.3);
+    }
+    nav {
+      background-color: var(--nav-bg);
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 20px;
+    }
+    .news-item {
+      background-color: var(--news-bg);
+      padding: 15px;
+      margin: 20px 0;
+      border-left: 5px solid var(--border-accent);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .news-item img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 10px;
+    }
+    .news-date {
+      color: #888;
+      font-size: 0.9em;
+      margin-bottom: 8px;
+    }
+    footer {
+      background-color: var(--header-bg);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+    }
+    h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      background: linear-gradient(to right, #b2ff59 20%, #76ff03 40%, #64dd17 60%);
+      background-size: 1000px 100%;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: shimmer 3s linear infinite;
+      text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.2);
+    }
+    @keyframes shimmer {
+      0% { background-position: -1000px 0; }
+      100% { background-position: 1000px 0; }
+    }
+  </style>
+</head>
+<body data-theme="light">
+  <header>
+    <h1><i class="fas fa-atom"></i> SHAHI SCIENCE</h1>
+    <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="#more-news">More News</a>
+  </nav>
+
+  <section id="more-news">
+    <h2><i class="fas fa-newspaper"></i> More Science News</h2>
+
+    <div class="news-item">
+      <div class="news-date">March 2025</div>
+      <h3>CRISPR: The Future of Precision Medicine</h3>
+      <p>CRISPR (Clustered Regularly Interspaced Short Palindromic Repeats) is a revolutionary gene-editing technology derived from a natural defense mechanism found in bacteria. Since its adaptation for genetic engineering in 2012, CRISPR has rapidly advanced medical and biological research by enabling scientists to precisely alter DNA. In 2025, the latest evolution—CRISPR 3.0—has pushed the boundaries of what’s possible in genetic modification.
+CRISPR 3.0 was introduced in March 2025 and marks a significant leap in accuracy and safety. It features enhanced guide RNA design, significantly reducing off-target effects—a major concern in earlier versions. This version also enables multiplex editing, allowing multiple genes to be edited simultaneously. Importantly, CRISPR 3.0 introduces epigenetic editing, which can turn genes on or off without changing the DNA sequence itself, opening new possibilities for treating complex diseases like cancer and Alzheimer’s. Additionally, a self-destruct safety mechanism was built in, increasing the safety of therapeutic applications.
+Applications of CRISPR have grown across multiple sectors. In medicine, it's being used in clinical trials to treat genetic disorders such as sickle cell disease, and in personalized cancer therapies. In agriculture, CRISPR creates disease-resistant, climate-resilient crops. It also plays a role in sustainable biomanufacturing.
+While CRISPR 3.0 is a breakthrough, ethical concerns remain—particularly in germline editing and equitable access. As global discussions continue, CRISPR stands as a symbol of both immense potential and responsibility in the future of science and healthcare.
+</p>
+      <img src="https://orendasolutions.com/wp-content/uploads/2024/08/CRISPR-and-Gene-Editing.webp" alt="CRISPR: The Future of Precision Medicine">
+<p><font color="grey"><i>Image from OrendaSolutions</i></font></p>
+    </div>
+    
+    
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SHAHI SCIENCE. All rights reserved.</p>
+    <p>Created by Shahriar</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      const themeBtn = document.getElementById('themeBtn');
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      body.setAttribute('data-theme', newTheme);
+      themeBtn.textContent = newTheme === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+  </script>
+</body>
+</html>
