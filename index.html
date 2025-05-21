@@ -133,7 +133,20 @@
     button:hover {
       background-color: #388e3c;
     }
+    .carousel {
+      display: flex;
+      overflow: hidden;
+      position: relative;
+      align-items: center;
+    }
+    .news-container {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 100%;
+    }
     .news-item {
+      min-width: 100%;
+      box-sizing: border-box;
       background: var(--news-bg);
       padding: 15px;
       margin: 10px 0;
@@ -148,6 +161,42 @@
       color: #888;
       font-size: 0.9em;
       margin-bottom: 8px;
+    }
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(76, 175, 80, 0.8);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+      font-size: 1.5rem;
+      border-radius: 50%;
+      transition: background 0.3s;
+    }
+    .carousel-btn:hover {
+      background: rgba(56, 142, 60, 1);
+    }
+    .carousel-btn.left {
+      left: 10px;
+    }
+    .carousel-btn.right {
+      right: 10px;
     }
     @media (max-width: 600px) {
       nav a {
@@ -172,26 +221,42 @@
 
   <section id="home">
     <h2><span class="icon-wrapper"><i class="fas fa-newspaper icon"></i></span>Latest Science News</h2>
-    <div class="news-item">
-      <div class="news-date">October 3, 2024</div>
-      <h3><span class="icon-wrapper"><i class="fas fa-award icon"></i></span>2024 Nobel Prize in Physics Awarded for Neutrino Research</h3>
-      <p>The Nobel Prize in Physics 2024 was awarded jointly to Pierre Auger and colleagues for their groundbreaking research into neutrinos — elusive particles that could unlock mysteries of the universe's structure. The awarded experiment, conducted at SNOLAB, used deep-underground detectors to gather critical data on particle behavior, furthering our understanding of astrophysics and particle physics.</p>
-      <img src="https://www.snolab.ca/wp-content/uploads/2024/10/Nobel-prize-768x770.jpeg" width="400px" height="400px" alt="Nobel Prize Neutrino Research">
+    <div class="carousel">
+      <button class="carousel-btn left" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+      <div class="news-container" id="newsContainer">
+        <div class="news-item">
+          <div class="news-date">October 3, 2024</div>
+          <h3><span class="icon-wrapper"><i class="fas fa-award icon"></i></span>2024 Nobel Prize in Physics Awarded for Neutrino Research</h3>
+          <p>The Nobel Prize in Physics 2024 was awarded to Pierre Auger and his colleagues for their pioneering research into neutrinos—elusive subatomic particles that play a crucial role in understanding the universe's fundamental structure. Auger's team utilized the Pierre Auger Observatory, a vast cosmic ray detector located in Argentina, to conduct groundbreaking studies on ultra-high-energy (UHE) neutrinos. Their work has provided some of the most stringent upper limits on the flux of UHE neutrinos, enhancing our comprehension of these particles' behavior and their sources in the cosmos. This achievement marks a significant advancement in neutrino physics and astrophysics.</p>
+          <img src="https://www.snolab.ca/wp-content/uploads/2024/10/Nobel-prize-768x770.jpeg" alt="Nobel Prize Neutrino Research">
+        <p><font color="grey"><i>Image from Snolab</i></font></p>
+</div>
+        <div class="news-item">
+          <div class="news-date">September 18, 2024</div>
+          <h3><span class="icon-wrapper"><i class="fas fa-dna icon"></i></span>AI-Generated Protein Structures Advance Drug Discovery</h3>
+          <p>Scientists using DeepMind’s AlphaFold have successfully predicted the 3D structures of thousands of previously uncharacterized proteins, marking a major advancement in molecular biology. These proteins, whose shapes were unknown due to limitations in experimental techniques, are now better understood through AlphaFold's AI-driven predictions. The breakthrough offers new insights into diseases, drug discovery, and biological processes by revealing how these proteins function at the molecular level. Researchers can now explore potential therapeutic targets faster and more accurately. This work dramatically accelerates the pace of discovery, providing a comprehensive protein structure database that serves as a foundational resource for global biomedical research.</p>
+          <img src="https://www.drugdiscoverytrends.com/wp-content/uploads/2023/06/protein-and-network-1-768x499.jpg" width="1000" height="1000" alt="AlphaFold Protein Discovery">
+<p><font color="grey"><i>Image from drugdiscoverytrends</i></font></p>
+        </div>
+        <div class="news-item">
+          <div class="news-date">August 10, 2024</div>
+          <h3><span class="icon-wrapper"><i class="fas fa-telescope icon"></i></span>James Webb Telescope Captures Image of Earliest Galaxy</h3>
+          <p>The James Webb Space Telescope (JWST) has captured an image of one of the earliest known galaxies, JADES-GS-z14-0, formed just 300 million years after the Big Bang. Detected through the JWST Advanced Deep Extragalactic Survey, this galaxy has a redshift of 14.32, making it one of the most distant ever observed. Its discovery provides critical insights into the early universe, especially the epoch of reionization when the first light from stars began shaping the cosmos. The galaxy’s unexpected brightness and structure challenge current models of galaxy formation, suggesting that star and galaxy formation began earlier than previously believed.</p>
+          <img src="https://static.scientificamerican.com/dam/m/7b2a83b24c5c533e/original/2RNRD1F_WEB.jpg?m=1718372452.582&w=1350">
+<p><font color="grey"><i>Image from scientificamerican.com</i></font></p>
+        </div>
+      </div>
+      <button class="carousel-btn right" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
     </div>
+<!-- SEE MORE NEWS Button -->
+<div style="text-align: center; margin-top: 20px;">
+  <a href="more-news.html">
+    <button style="padding: 10px 20px; background-color: #4caf50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+      SEE MORE NEWS
+    </button>
+  </a>
+</div>
 
-    <div class="news-item">
-      <div class="news-date">September 18, 2024</div>
-      <h3><span class="icon-wrapper"><i class="fas fa-dna icon"></i></span>AI-Generated Protein Structures Advance Drug Discovery</h3>
-      <p>Scientists using DeepMind’s AlphaFold have successfully predicted structures of thousands of previously uncharacterized proteins. This advancement is expected to speed up drug discovery and deepen our understanding of various diseases by allowing researchers to model molecular interactions more efficiently.</p>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/AlphaFold_Logo.svg/512px-AlphaFold_Logo.svg.png" alt="AlphaFold Protein Discovery">
-    </div>
-
-    <div class="news-item">
-      <div class="news-date">August 10, 2024</div>
-      <h3><span class="icon-wrapper"><i class="fas fa-telescope icon"></i></span>James Webb Telescope Captures Image of Earliest Galaxy</h3>
-      <p>The James Webb Space Telescope has captured an image of a galaxy formed just 300 million years after the Big Bang. This discovery offers new insights into galaxy formation and the conditions of the early universe. The galaxy, dubbed JADES-GS-z13-0, is the most distant ever observed.</p>
-      <img src="https://www.nasa.gov/sites/default/files/thumbnails/image/stsci-01g7p45z0r9ffn5f2wnz7j4xb4.png" alt="James Webb Early Galaxy">
-    </div>
   </section>
 
   <section id="about">
@@ -227,7 +292,6 @@
     <form onsubmit="event.preventDefault(); alert('Review submitted!');">
       <label for="review">Your Review:</label>
       <textarea id="review" name="review" rows="3" required></textarea>
-
       <button type="submit">Submit Review</button>
     </form>
   </section>
@@ -236,6 +300,10 @@
     <p>&copy; 2025 SHAHI SCIENCE. All rights reserved.</p>
     <p>Created by Shahriar</p>
   </footer>
+
+  <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="back-to-top" title="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
   <script>
     function toggleTheme() {
@@ -246,6 +314,27 @@
       body.setAttribute('data-theme', newTheme);
       themeBtn.textContent = newTheme === 'light' ? 'Dark Mode' : 'Light Mode';
     }
+
+    let currentIndex = 0;
+    const container = document.getElementById('newsContainer');
+    const totalItems = container.children.length;
+
+    function updateCarousel() {
+      container.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalItems;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+      updateCarousel();
+    }
+
+    setInterval(nextSlide, 10000);
   </script>
 </body>
 </html>
+
